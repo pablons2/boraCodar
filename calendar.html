@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+        html,body{
+            font-family: 'Lato';
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+        }
+        .box{
+            padding: 32px;
+            background-color: #fff;
+            box-shadow: 0px 8px 32px rgba(0 0 0 /.16);
+            border-radius: 16px;
+            width: fit-content;
+        }
+        #app{
+            display: grid;
+            grid-template-rows: 40px 1fr;
+            gap:24px;
+        }
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: bold;
+            color: #333;
+        }
+        header i{
+            padding: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            
+        }
+        header i:hover{
+            background-color: rgb(211, 225, 255);
+        }
+        main{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        main > div{
+            width: 82px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            cursor: pointer;
+            transition: all 300ms;
+
+        }
+        main >div:hover{
+            background-color:rgb(64, 121, 243);
+            color:#fff;
+            border-radius: 8px;
+        }
+
+        main > div.active-calendar{
+         background-color:#00CEFF;
+         border-radius: 8px;
+         font-weight: 700;
+         color: #fff;
+         position: relative;
+        }
+        main > div.active-calendar::after{
+            content: '';
+            width: 4px;
+            height: 4px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 6px;
+           }
+    </style>
+</head>
+<body>
+    <div id="app" class="box">
+        <header> <i class="bi bi-chevron-left"></i><span></span> <i class="bi bi-chevron-right"></i></header>
+        <main></main>
+    </div>
+  <script src="jscalendar.js"></script>
+</body>
+</html>
